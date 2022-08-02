@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Início | IGNews</title>
+        <title>Início | ig.news</title>
       </Head>
       <h1>Hello World</h1>
     </>
