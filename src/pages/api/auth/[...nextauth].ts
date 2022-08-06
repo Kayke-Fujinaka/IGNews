@@ -1,5 +1,8 @@
 import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
+import { query as QY } from "faunadb";
+
+import { fauna } from "../../../services/fauna";
 
 export default NextAuth({
   providers: [
@@ -9,4 +12,24 @@ export default NextAuth({
       authorization: { params: { scope: "read:user" } },
     }),
   ],
+  callbacks: {
+    async signIn({ user, account, profile, email, credentials }) {
+      try {
+        await fauna.query(
+          QY.If(
+            QY.Not(
+              QY.Exists(
+                QY.Match(QY.Index("user_by_email"), QY.Casefold(user.email))
+              )
+            ),
+            QY.Create(QY.Collection("users"), { data: { email } }),
+            QY.Get(QY.Match(QY.Index("user_by_email"), QY.Casefold(user.email)))
+          )
+        );
+        return true;
+      } catch {
+        return false;
+      }
+    },
+  },
 });
