@@ -4,7 +4,7 @@ import { fauna } from "../../services/fauna";
 import { stripe } from "../../services/stripe";
 import { query as QY } from "faunadb";
 
-interface IUser {
+type User = {
   ref: {
     id: string;
   };
@@ -13,11 +13,11 @@ interface IUser {
   }
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const Subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     const session = await getSession({ req });
 
-    const user = await fauna.query<IUser>(
+    const user = await fauna.query<User>(
       QY.Get(
         QY.Match(
           QY.Index('user_by_email'),
@@ -65,3 +65,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.status(405).end("Method not allowed");
   }
 };
+
+export default Subscribe
