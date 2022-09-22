@@ -10,7 +10,8 @@
     "incremental": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "resolveJsonModule": true,
+    "resolveJsonModule": true, 
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "isolatedModules": true,
     "jsx": "preserve"
