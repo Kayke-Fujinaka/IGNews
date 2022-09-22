@@ -37,4 +37,5 @@ export default NextAuth({
       }
     },
   },
+  secret: process.env.NEXT_NO_SECRET
 });
