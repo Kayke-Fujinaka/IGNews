@@ -9,43 +9,44 @@ type User = {
     id: string;
   };
   data: {
-    stripe_customer_id: string
-  }
-}
+    stripe_customer_id: string;
+  };
+};
 
-const Subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method === 'POST') {
-    const user = await req.body.user;
+export default async function subscribe(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method === "POST") {
+    const session = await getSession({ req });
 
-    const users = await fauna.query<User>(
+    const user = await fauna.query<User>(
       QY.Get(
         QY.Match(
           QY.Index('user_by_email'),
-          QY.Casefold(user.email)
+          QY.Casefold(session.user.email)
         )
       )
     );
 
-    let customerId = users.data.stripe_customer_id;
 
-    if (!customerId) {
+    let customerId = user.data.stripe_customer_id
+
+    if(!customerId) {
       const stripeCustomer = await stripe.customers.create({
-        email: user.email,
+        email: session.user.email,
       });
-
+  
       await fauna.query(
         QY.Update(
-          QY.Ref(QY.Collection('users'), user.ref.id),
-          {
+          QY.Ref(QY.Collection("users"), user.ref.id), {
             data: {
-               stripe_customer_id: stripeCustomer.id
-            }
-          }
-        )
-      );
+              stripe_customer_id: stripeCustomer.id,
+            },
+          })
+        );
 
-      customerId = stripeCustomer.id;
+        customerId = stripeCustomer.id
     }
+
+
 
     const stripeCheckoutSession = await stripe.checkout.sessions.create({
       customer: customerId,
@@ -64,5 +65,3 @@ const Subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
     res.status(405).end("Method not allowed");
   }
 };
-
-export default Subscribe
