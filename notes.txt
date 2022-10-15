@@ -1,0 +1,79 @@
+-> Jamstack
+
+A Jamstack é uma arquitetura criada para construir sites mais rápidos, que escalam com facilidade e que são mais seguros.
+
+	- JavaScript ele traz a funcionalidade e comportamentos da aplicação.
+	- API's serve como a comunicação dos dados para o clientes. Eles são feitas através de chamadas HTTPs com o Javascript.
+	- Markup ele é o HTML a qual fornece o DOM para ser processado pelos navegadores e outros dispositivos.
+	
+Os sites criados com Jamstack já possuem suas páginas pré-renderizadas antes de serem publicadas. 
+É uma boa opção criar aplicação Jamstack junto com o Next.js devido ao fato de conseguir criar 
+páginas no servidor e rotas de API com Serveless Function.
+
+Possibilidade de criar um site funcional sem que precise necessiaramente de um back-end.
+	
+Vantagens: velocidade, segurança, ganho de escala, portabilidade, ótima experiência de desenvolvedor
+
+Desvantagens: dificuldade para editores de conteúdo, codificação, recursos dinâmicos exigem mais trabalho, 
+falha da aplicação em caso de falhas de serviçços de terceiros
+
+------------------------------------------------------------------------------------------------------------------------------
+
+-> CMS (Content Management System)
+
+Ele é um sistema que permite colocar um site no ar de forma rápida. Eles são os projetos que já ganhamos um 
+painel de adminitração pronto que podemos criar um conteúdo dentro dele.
+
+Ele oferece um gerenciamento de conteúdo de uma forma 100% dinâmico sendo bastante produtivo para pessoas que
+desejam ter um site que não estático.
+
+Ele surgiu para poupar o tempo, dinheiro e a mão de obra de desenvolvedores na criação de site. Ele oferece de
+uma forma totalmente rápida e com facilidade a criação de sites. O usuário não precisa se preocupar com a parte técnica,
+mas apenas com alimentar o banco de dados com informações necessárias ao site.
+
+Ele oferece:
+	- Criação e publicação de páginas;
+	- Edição de texto e de código do site;
+	- Moderação de comentários;
+	- Controle de estoque e sistema de vendas (caso seja e-commerce);
+	- Instalação de plugins e extensões para aumentar as funções do site;
+	- Biblioteca de mídias, para carregar imagens e vídeos que serão usados no site;
+
+Exemplos: 
+	Wordpress 
+	Magento (E-commerce) 
+	Joomla (Não é mais usado)
+	Drupal (Não é mais usado)
+
+------------------------------------------------------------------------------------------------------------------------------
+
+-> Headless CMS
+
+"Um CMS Tradicional é como o livro que você compra em uma livraria. Quer acessar o conteúdo? 
+Você pega o livro e lê ele, e esta é a única forma. Um Headless CMS é como comprar um eBook. 
+Você lê ele no Amazon Kindle, ou você usa o aplicativo do Kindle no PC, Mac, smartphone ou Tablet."
+
+O CMS Tradicional ele tem um problema de que o conteúdos está "amarrado" a implementação do CMS, assim 
+o Headless CMS veio para sanar este impasse visando que seu consumo possa ser feitos em diferentes interfaces.
+
+Assim, um Headless CMS não se preocupa em como o seu conteúdo ficará no final, 
+ele se preocupa apenas em como o conteúdo estará estruturado.
+
+Ele é um CMS, porém não apresenta um conteúdo. Apenas é um painel de adminitração que os dados 
+são servidos atráves de uma API.
+
+Ele oferece: 
+	- A flexibilidade para escolher a tecnologia que você deseja usar e julga ser a melhor para o projeto.
+	- Facilidade de configuração e implantação do código, pois você não precisará de um Back End, apenas do Front. 
+	  Então qualquer static hoisting irá ser suficiente.
+	- A flexibilidade para transpor o mesmo conteúdo para ambientes/dispositivos diferentes, que outrora era 
+	  a maior dificuldade que CMS tradicional enfrentava
+
+API's: HTTP, GraphQL, SDK
+
+Exemplos: 
+	Gratuitos = Strapi, Ghost, Keystone
+	Pagos = GraphCMS, Prismic CMS, Contentful (Sãos os melhores)
+	Para e-commerce = Shopify, Saleor
+
+------------------------------------------------------------------------------------------------------------------------------
