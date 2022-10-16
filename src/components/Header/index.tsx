@@ -1,5 +1,6 @@
+import { useRouter } from "next/router";
+import { ActiveLink } from "../ActiveLink";
 import { SignInButton } from "../SignInButton";
-import Link from "next/link";
 import styles from "./styles.module.scss";
 
 // O Next é uma ótima ferramenta para que você não precise ficar renderizando
@@ -13,17 +14,18 @@ import styles from "./styles.module.scss";
 // Ele deve ser usado em páginas que o usuário irá acessar bastante.
 
 export function Header() {
+
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
         <img src="/images/logo.svg" alt="Logo do ig.news" />
         <nav>
-          <Link href="/">
-            <a className={styles.active}>Home</a>
-          </Link>
-          <Link href="/posts" prefetch>
+          <ActiveLink activeClassName={styles.active} href="/">
+            <a>Home</a>
+          </ActiveLink>
+          <ActiveLink activeClassName={styles.active} href="/posts" prefetch>
             <a>Posts</a>
-          </Link>
+          </ActiveLink>
         </nav>
 
         <SignInButton />
