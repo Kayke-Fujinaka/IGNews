@@ -14,6 +14,18 @@ interface PostsProps {
   posts: Post[];
 }
 
+type ExcerptContent = {
+  start: number;
+  end: number;
+  type: string;
+};
+
+interface ExcerptContentProps {
+  type: string;
+  text: string;
+  spans: ExcerptContent[];
+}
+
 export default function Posts({ posts }: PostsProps) {
   return (
     <>
@@ -55,8 +67,9 @@ export const getStaticProps: GetStaticProps = async () => {
       title: RichText.asText(post.data.title), // Vai ser o título do post
       // Vai ser o resumo do post
       excerpt:
-        post.data.content.find((content) => content.type === "paragraph")
-          ?.text ?? "",
+        post.data.content.find(
+          (content: ExcerptContentProps) => content.type === "paragraph"
+        )?.text ?? "",
       updatedAt: new Date(post.last_publication_date).toLocaleDateString(
         // Vai ser o dia da publicação do post
         "pt-BR",
