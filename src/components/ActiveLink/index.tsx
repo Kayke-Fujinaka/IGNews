@@ -16,11 +16,10 @@ export function ActiveLink({
 
   const className = asPath === rest.href ? activeClassName : "";
 
-  return (
-    <Link {...rest}>
-      {cloneElement(children, {
-        className,
-      })}
-    </Link>
-  );
+  // O cloneElement serve para manipular um elemento criando um clone a partir dele
+  // O primeiro parâmetro é o elemento que você quer clonar
+  // O segundo é uma propriedade que você quer passar para ele
+  // O terceiro é um filho para esse elemento
+
+  return <Link {...rest}>{cloneElement(children, { className })}</Link>;
 }
