@@ -49,6 +49,17 @@ export const getServerSideProps: GetServerSideProps = async ({
 }) => {
   const session = await getSession({ req });
 
+  console.log(session)
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false
+      }
+    }
+  }
+
   const { slug } = params;
   const prismic = getPrismicClient(req);
   // O "getByUID" é para buscar um documento a partir do slug dele

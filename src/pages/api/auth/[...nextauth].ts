@@ -17,6 +17,43 @@ export default NextAuth({
     }),
   ],
   callbacks: {
+    // Ele permite modificar os dados que tem no session
+    async session({ session }) {
+      try {
+        // Identificar se o usuário possui uma inscrição ativa
+        const userActiveSubscription = await fauna.query(
+          QY.Get(
+            QY.Intersection([
+              QY.Match(
+                QY.Index("subscription_by_user_ref"),
+                QY.Select(
+                  "ref",
+                  QY.Get(
+                    QY.Match(
+                      QY.Index("user_by_email"),
+                      QY.Casefold("session.user.email")
+                    )
+                  )
+                )
+              ),
+              QY.Match(QY.Index("subscription_by_status"), "active"),
+            ])
+          )
+        );
+        return {
+          ...session,
+          activeSubscription: userActiveSubscription,
+          expires: "never",
+        };
+      } catch {
+        return {
+          ...session,
+          activeSubscription: null,
+          expires: "never",
+        };
+      }
+    },
+
     async signIn({ user, account, profile }) {
       const { email } = user;
       try {
@@ -37,5 +74,5 @@ export default NextAuth({
       }
     },
   },
-  secret: process.env.NEXT_NO_SECRET
+  secret: process.env.NEXT_NO_SECRET,
 });
