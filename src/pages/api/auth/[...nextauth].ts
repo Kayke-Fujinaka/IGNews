@@ -31,7 +31,7 @@ export default NextAuth({
                   QY.Get(
                     QY.Match(
                       QY.Index("user_by_email"),
-                      QY.Casefold("session.user.email")
+                      QY.Casefold(session.user.email)
                     )
                   )
                 )
@@ -45,7 +45,8 @@ export default NextAuth({
           activeSubscription: userActiveSubscription,
           expires: "never",
         };
-      } catch {
+      } catch (err) {
+        console.log(err);
         return {
           ...session,
           activeSubscription: null,
