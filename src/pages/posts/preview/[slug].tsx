@@ -1,7 +1,7 @@
 // Quando uma página é dinâmica, ela é de UM post e não de uma rota "/post"
 // Para isso criamos um arquivo com colchetes
 
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { getSession, useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
@@ -61,10 +61,11 @@ export default function PostPreview({ post }: PostPreviewProps) {
   );
 }
 
-export const getStaticPaths = () => {
+// A função ela gera uma página estática no primeiro acesso.
+export const getStaticPaths: GetStaticPaths = () => {
   return {
-    paths: [],
-    fallback: "blocking",
+    paths: [], // Quais caminhos serão gerados durante a Build, porém aqui está vazio então todos post serão gerados caso o usuário faça o primeiro acesso
+    fallback: "blocking", // Ele tem o true, false e blocking. Cada um ligado em relação a carregar o conteúdos de uma página.
   };
 };
 
@@ -93,5 +94,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       post,
     },
+    redirect: 60 * 60 // 30 minutos
   };
 };
