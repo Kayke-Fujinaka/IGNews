@@ -1,34 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">📰 Ignews</h1>
 
-## Getting Started
+<img src="./public/images/img.png" alt="Descrição da imagem">
 
-First, run the development server:
+> 🔎 Um Blog com CMS integrado e forma de pagamento com assinatura
+
+## 📁 Páginas
+
+O site tem no total 5 páginas, sendo elas:
+
+- **Home:** A página oferece a opção de fazer login com o Github ou de criar uma assinatura no site.
+- **Posts:** Oferece uma listagens de todos os posts que têm no site, porém deve possui assinatura para ver eles completos.
+- **Preview (Sem assinatura):** Uma página para ver apenas um pedaço do post caso o usuário não tenha assinatura.
+- **Post (Com assinatura):** Uma página apresentando o post completo.
+## 🚀 Tecnologias
+
+- [Jamsack](https://jamstack.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Next.js](https://nextjs.org/)
+- [NextAuth.js](https://next-auth.js.org/)
+- [FaunaDB](https://fauna.com/)
+- [Axios](https://axios-http.com/ptbr/docs/intro)
+- [Stripe](https://stripe.com/br)
+- [Prismic CMS](https://prismic.io/)
+- [SASS](https://sass-lang.com/)
+
+## :closed_book: Como usar?
+
+Antes de iniciar, você precisa ter [Git](https://git-scm.com) e [Node](https://nodejs.org/en/) instalados.
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Clone this project
+$ git clone https://github.com/Kayke-Fujinaka/ig.news
+
+# Access
+$ cd ignews
+
+# Install dependencies
+$ yarn or npm
+
+# Run the project
+$ yarn start or npm start
+
+# The server will initialize in the <http://localhost:3000>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🤝 Colaboradores
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/98772000?s=400&u=80de9af672be7f75cc7a546838552cf63d5b82fe&v=4" width="160px;" alt="Foto do Kayke Fujinaka no GitHub"/><br>
+        <sub>
+          <b>Kayke Fujinaka</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 📝 Licença
 
-## Learn More
+Este projeto está sob licença. Consulte o arquivo [LICENSE](LICENSE.md) para obter mais detalhes.
 
-To learn more about Next.js, take a look at the following resources:
+&#xa0;
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<a href="#top">Volte para o topo</a>
