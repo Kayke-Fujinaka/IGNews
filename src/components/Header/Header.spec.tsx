@@ -11,7 +11,7 @@ jest.mock("next-auth/react", () => ({
   useSession: jest.fn().mockImplementation(() => [null, false]),
 }));
 
-describe("Header", () => {
+describe("Header component", () => {
   it("should be able to renders correctly", () => {
     render(<Header />);
 
