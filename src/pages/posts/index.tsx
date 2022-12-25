@@ -1,9 +1,9 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import { getPrismicClient } from "../../services/prismic";
-import { RichText } from "prismic-dom";
-import styles from "./styles.module.scss";
 import Link from "next/link";
+import { RichText } from "prismic-dom";
+import { getPrismicClient } from "../../services/prismic";
+import styles from "./styles.module.scss";
 
 type Post = {
   slug: string;
@@ -56,8 +56,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
   // O "getByType" aceita o ID da API e permite passar um objeto de parâmetros opcionais
   // Ele consultará o seu repositório do Prismic e retornará uma promessa com as respostas da API
-  const response = await prismic.getByType("post", {
-    fetch: ["post.title", "post.content"], // Quais os dados que quero buscar do "post"
+  const response = await prismic.getByType("publication", {
+    fetch: ["publication.title", "publication.content"], // Quais os dados que quero buscar do "post"
     pageSize: 100, // Quantos post deseja trazer. Ele serve como uma páginação que funciona como performace
   });
 
