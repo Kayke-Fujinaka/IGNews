@@ -13,7 +13,7 @@ const posts = [
   } as Post,
 ];
 
-describe("Post page", () => {
+describe("Posts page", () => {
   it("should be able to renders correctly", () => {
     render(<Posts posts={posts} />);
 
