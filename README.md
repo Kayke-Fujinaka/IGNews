@@ -1,18 +1,18 @@
 <h1 align="center">📰 Ignews</h1>
 
-<img src="./public/images/img.png" alt="Descrição da imagem">
+<img src="./public/images/img.png" alt="Image description">
 
-> 🔎 Um Blog com CMS integrado e forma de pagamento com assinatura
+> 🔎 A Blog with integrated CMS and subscription payment method
 
-## 📁 Páginas
+## 📁 Pages
 
-O site tem no total 5 páginas, sendo elas:
+The site has a total of 5 pages, which are:
 
-- **Home:** A página oferece a opção de fazer login com o Github ou de criar uma assinatura no site.
-- **Posts:** Oferece uma listagens de todos os posts que têm no site, porém deve possui assinatura para ver eles completos.
-- **Preview (Sem assinatura):** Uma página para ver apenas um pedaço do post caso o usuário não tenha assinatura.
-- **Post (Com assinatura):** Uma página apresentando o post completo.
-## 🚀 Tecnologias
+- **Home:** The page offers the option to login with Github or to create a signature on the site.
+- **Posts:** Offers a list of all posts on the site, but you must have a subscription to view them in full.
+- **Preview (Without Subscription):** A page to see just a piece of the post if the user has no subscription.
+- **Post (With signature):** A page presenting the complete post.
+## 🚀 Technologies
 
 - [Jamsack](https://jamstack.org/)
 - [Typescript](https://www.typescriptlang.org/)
@@ -24,18 +24,18 @@ O site tem no total 5 páginas, sendo elas:
 - [Prismic CMS](https://prismic.io/)
 - [SASS](https://sass-lang.com/)
 
-## :closed_book: Como usar?
+## :closed_book: How to use it?
 
-Antes de iniciar, você precisa ter [Git](https://git-scm.com) e [Node](https://nodejs.org/en/) instalados.
+Before starting, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
 
 ```bash
 # Clone this project
 $ git clone https://github.com/Kayke-Fujinaka/ig.news
 
-# Access
-$ cd ignews
+# access
+$ cd ignnews
 
-# Install dependencies
+# install dependencies
 $ yarn or npm
 
 # Run the project
@@ -44,27 +44,27 @@ $ yarn start or npm start
 # The server will initialize in the <http://localhost:3000>
 ```
 
-## 🤝 Colaboradores
+## 🤝 Collaborators
 
-Agradecemos às seguintes pessoas que contribuíram para este projeto:
+Thanks to the following people who contributed to this project:
 
 <table>
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/98772000?s=400&u=80de9af672be7f75cc7a546838552cf63d5b82fe&v=4" width="160px;" alt="Foto do Kayke Fujinaka no GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/u/98772000?s=400&u=80de9af672be7f75cc7a546838552cf63d5b82fe&v=4" width="160px;" alt="Photo by Kayke Fujinaka on GitHub"/><br>
         <sub>
           <b>Kayke Fujinaka</b>
         </sub>
       </a>
-    </td>
+    </all>
   </tr>
 </table>
 
-## 📝 Licença
+## 📝 License
 
-Este projeto está sob licença. Consulte o arquivo [LICENSE](LICENSE.md) para obter mais detalhes.
+This project is under license. See the [LICENSE](LICENSE.md) file for more details.
 
 &#xa0;
 
-<a href="#top">Volte para o topo</a>
+<a href="#top">Go back to top</a>
